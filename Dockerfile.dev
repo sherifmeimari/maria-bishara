@@ -1,0 +1,7 @@
+FROM node:15.0.1-buster
+WORKDIR '/app'
+COPY  ./package.json ./
+RUN npm install -g gatsby-cli
+RUN npm install
+COPY . .
+CMD ["gatsby", "develop", "-H", "0.0.0.0"]
